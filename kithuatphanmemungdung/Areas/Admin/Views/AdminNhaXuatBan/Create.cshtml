@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4e73df;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: deepskyblue;
+        }
+
+    
+</style>
+
+
+    <h3>CREATE</h3>
+
+    <div style="margin:auto;">
+        @using (Html.BeginForm("Create", "AdminNhaXuatBan", FormMethod.Post, new { @style = "width : 50%; margin:auto" }))
+        {
+            <label for="fname">Mã Nhà Xuất Bản</label>
+            <input type="text" id="fname" name="MaNhaXuatBan" placeholder="Nhập Mã Nhà Xuất Bản.." required>
+
+            <label for="lname">Tên Nhà Xuất Bản</label>
+            <input type="text" id="lname" name="TenNhaXuatBan" placeholder="Nhập Tên Nhà Xuất Bản.."  required>
+
+            <label for="country">Tình Trạng</label>
+            <select id="country " style="width:30%" name="TinhTrang"  required>
+                <option value="0">Chưa Khóa</option>
+                <option value="1">Đã Khóa</option>
+
+            </select>
+
+            <input type="submit" value="Submit">
+        }
+
+
+    </div>
+
+

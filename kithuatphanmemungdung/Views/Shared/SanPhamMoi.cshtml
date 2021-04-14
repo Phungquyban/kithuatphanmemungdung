@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ShopOnlineConnection.SanPham>
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-3 col-md-4 col-xs-6 item DeanGraziosi">
+        <div class="card ">
+            <a href=@Url.Action("Details",new { id = item.MaSanPham }) class="motsanpham"
+               style="text-decoration: none; color: black;" data-toggle="tooltip"
+               data-placement="bottom" title="Lập Kế Hoạch Kinh Doanh Hiệu Quả">
+                <img class="card-img-top anh" src="~/asset/images/@item.Hinhchinh"
+                     alt="lap-ke-hoach-kinh-doanh-hieu-qua">
+                <div class="card-body noidungsp mt-3">
+                    <h6 class="card-title ten">@item.TenSanPham</h6>
+                    <small class="tacgia text-muted">@item.TacGia</small>
+                    <div class="gia d-flex align-items-baseline">
+                        <div class="giamoi">@item.Gia ₫</div>
+                        <div class="giacu text-muted">@item.GiaBia ₫</div>
+                        <div class="sale">@item.GiamGia</div>
+                    </div>
+                    <div class="danhgia">
+                        <ul class="d-flex" style="list-style: none;">
+                            <li class="active"><i class="fa fa-star"></i></li>
+                            <li class="active"><i class="fa fa-star"></i></li>
+                            <li class="active"><i class="fa fa-star"></i></li>
+                            <li class="active"><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <span class="text-muted">0 nhận xét</span>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+}
+

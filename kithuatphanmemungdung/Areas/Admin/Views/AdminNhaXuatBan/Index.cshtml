@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ShopOnlineConnection.NhaXuatBan>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Quản lý nhà xuất bản</h6>
+    </div>
+    <div class="card-body">
+       
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                <thead >
+                    <tr >
+                        <th >Mã Nhà Xuất Bản</th>
+                        <th>Tên Nhà Xuất Bản</th>
+                        <th>Tình Trạng</th>
+                        <th colspan="2" > <a href="@Url.Action("Create", "AdminNhaXuatBan")"><i class="far fa-plus-square" style="font-size:1.6rem;color:aquamarine"></i></a> </th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Mã Nhà Xuất Bản</th>
+                        <th>Tên Nhà Xuất Bản</th>
+                        <th>Tình Trạng</th>
+                        
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr >
+                            <td>@item.MaNhaXuatBan</td>
+                            <td>@item.TenNhaXuatBan</td>
+                            <td>@item.TinhTrang</td>
+                            <td> <a href="@Url.Action("Edit", "AdminNhaXuatBan", new { id = @item.MaNhaXuatBan})"> <i class="fas fa-edit" style=" font-size: 1.6rem; color: pink"> </i> </a></td>
+                            <td> <a href="#"> <i class="fas fa-trash-alt" style=" font-size: 1.6rem; color: black"> </i> </a> </td>
+                        </tr>
+                    }
+
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

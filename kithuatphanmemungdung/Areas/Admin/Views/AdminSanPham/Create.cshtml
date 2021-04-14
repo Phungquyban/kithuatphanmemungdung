@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4e73df;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: deepskyblue;
+        }
+</style>
+
+
+<h3>CREATE</h3>
+
+<div style="margin:auto;">
+    @using (Html.BeginForm("Create", "AdminSanPham", FormMethod.Post, new { @style = "width : 50%; margin:auto" }))
+    {
+        <label for="msp">Mã Sản Phẩm</label>
+        <input type="text" id="msp" name="MaSanPham" placeholder="Nhập Mã Sản Phẩm.." required>
+
+        <label for="mlsp">Mã Loại Sản Phẩm</label>
+        <input type="text" id="mlsp" name="MaLoaiSanPham" placeholder="Nhập Mã Loại Sản Phẩm.." required>
+
+        <label for="mnxb">Mã Nhà Xuất Bản</label>
+        <input type="text" id="mnxb" name="MaNhaXuatBan" placeholder="Nhập Mã Nhà Xuất Bản.." required>
+
+        <label for="tsp">Tên Sản Phẩm</label>
+        <input type="text" id="tsp" name="TenSanPham" placeholder="Nhập Tên Sản Phẩm.." required>
+
+        <label for="hinhchinh" class="Hinhchinh" style="display:block;">
+            Hình Chính
+        </label>
+
+        <input id="hinhchinh" name="Hinhchinh" type="file" required/>
+
+        <label for="hinh1" class="Hinh1" style="display:block;">
+            Hình 1
+        </label>
+
+        <input id="hinh1" name="Hinh1" type="file" required/>
+
+        <label for="hinh2" class="Hinh2" style="display:block;">
+            Hình 2
+        </label>
+
+        <input id="hinh2" name="Hinh2" type="file" required/>
+
+        <label for="gia"  style="display:block;">Giá</label>
+        <input type="text" id="gia" name="Gia" placeholder="Nhập Giá.." required>
+
+        <label for="tinhtrang">Tình Trạng</label>
+        <select id="tinhtrang " name="TinhTrang" required>
+            <option value="0">Chưa Khóa</option>
+            <option value="1">Đã Khóa</option>
+
+        </select>
+
+        <label for="giabia">Giá Bìa</label>
+        <input type="text" id="giabia" name="GiaBia" placeholder="Nhập Giá Bìa.." required>
+
+        <label for="tietkiem">Tiết Kiệm</label>
+        <input type="text" id="tietkiem" name="TietKiem" placeholder="Nhập Tiết Kiệm.." required>
+
+        <label for="giamgia">Giảm Giá</label>
+        <input type="text" id="giamgia" name="GiamGia" placeholder="Nhập Giảm Giá.." required>
+
+        <label for="tacgia">Tác Giả</label>
+        <input type="text" id="tacgia" name="TacGia" placeholder="Nhập Tác Giả.." required>
+
+        <label for="dichgia">Dịch Giả</label>
+        <input type="text" id="dichgia" name="DichGia" placeholder="Nhập Dịch Giả.." required>
+
+        <label for="ghichu">Ghi Chú</label>
+        <select id="ghichu " name="GhiChu" required>
+            <option value="New">Sản Phẩm Mới</option>
+            <option value="Old">Sản Phẩm Cũ</option>
+
+        </select>
+
+        <label for="combo">Combo</label>
+        <select id="combo " name="Combo" required>
+            <option value="0">Combo</option>
+            <option value="1">Sách lẻ</option>
+
+        </select>
+
+
+
+        <input type="submit" value="Submit">
+    }
+
+
+</div>
+
+

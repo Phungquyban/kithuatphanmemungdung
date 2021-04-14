@@ -1,0 +1,96 @@
+﻿@model IEnumerable<ShopOnlineConnection.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Quản lý nhà xuất bản</h6>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mã Sản Phẩm</th>
+                        <th>Mã Loại Sản Phẩm</th>
+                        <th>Mã Nhà Xuất Bản</th>
+                        <th>Tên Sản Phẩm</th>
+                        
+                        <th>Hình Chính</th>
+                        <th>Hình 1</th>
+                        <th>Hình 2</th>
+                        <th>Giá</th>
+                       
+                        <th>Tình Trạng</th>
+                        <th>Giá Bìa</th>
+                        <th>Tiết Kiệm</th>
+                        <th>Giảm Giá</th>
+                        <th>Tác Giả</th>
+                        <th>Dịch Giả</th>
+                        <th>Ghi Chú</th>
+                        <th>Combo</th>
+
+                        <th colspan="2"> <a href="@Url.Action("Create", "AdminSanPham")"><i class="far fa-plus-square" style="font-size:1.6rem;color:aquamarine"></i></a> </th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Mã Sản Phẩm</th>
+                        <th>Mã Loại Sản Phẩm</th>
+                        <th>Mã Nhà Xuất Bản</th>
+                        <th>Tên Sản Phẩm</th>
+                        
+                        <th>Hình Chính</th>
+                        <th>Hình 1</th>
+                        <th>Hình 2</th>
+                        <th>Giá</th>
+                        
+                        <th>Tình Trạng</th>
+                        <th>Giá Bìa</th>
+                        <th>Tiết Kiệm</th>
+                        <th>Giảm Giá</th>
+                        <th>Tác Giả</th>
+                        <th>Dịch Giả</th>
+                        <th>Ghi Chú</th>
+                        <th>Combo</th>
+
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.MaSanPham</td>
+                        <td>@item.MaLoaiSanPham</td>
+                        <td>@item.MaNhaXuatBan</td>
+                        <td>@item.TenSanPham</td>
+                        
+                        <td> <img src="~/asset/images/@item.Hinhchinh" style="width:120%"/></td>
+                        <td> <img src="~/asset/images/@item.Hinh1" style="width:120%"/></td>
+                        <td> <img src="~/asset/images/@item.Hinh2" style="width:120%"/></td>
+                        <td>@item.Gia</td>
+                        
+                        <td>@item.TinhTrang</td>
+                        <td>@item.GiaBia</td>
+                        <td>@item.TietKiem</td>
+                        <td>@item.GiamGia</td>
+                        <td>@item.TacGia</td>
+                        <td>@item.DichGia</td>
+                        <td>@item.GhiChu</td>
+                        <td>@item.Combo</td>
+                        
+                        <td> <a href="@Url.Action("Edit", "AdminSanPham", new { id = item.MaSanPham})"> <i class="fas fa-edit" style=" font-size: 1.6rem; color: pink"> </i> </a></td>
+                        <td> <a href="#"> <i class="fas fa-trash-alt" style=" font-size: 1.6rem; color: black"> </i> </a> </td>
+                    </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
